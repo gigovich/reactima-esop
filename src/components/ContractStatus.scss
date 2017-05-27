@@ -1,0 +1,17 @@
+@import "../styles/colors";
+
+.contract_status {
+  .title {
+    .material-icons {
+      vertical-align:middle;
+      margin-left: 1em;
+      font-size: 1.25rem !important;
+    }
+  }
+
+  .description {
+    display: none;
+    white-space: normal;
+    color: $table-description-color;
+  }
+}
