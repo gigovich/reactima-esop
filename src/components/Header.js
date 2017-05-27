@@ -9,7 +9,7 @@ export default ({userPK, userType, networkId}) => {
             <div className="row">
                 <div className="col-xs-12 col-md-10 col-md-offset-1 logo_section">
                     <div className="title">
-                        Employee Stock Option Plan Manager <span className="smaller">[on: {ContractUtils.getNetworkName(networkId)}]</span>
+                        Reactima Employee Stock Option Plan Manager <span className="smaller">[on: {ContractUtils.getNetworkName(networkId)}]</span>
                     </div>
                     {userType === "anonymous" &&
                     <div className="goTo"><a href="#esop_dapp">Go to DAPP</a></div>
@@ -20,7 +20,7 @@ export default ({userPK, userType, networkId}) => {
             {userType === "anonymous" &&
             <div className="introduction">
                 <div className="row center-md greeting">
-                  <h2>Welcome to ESOP manager</h2>
+                  <h2>Welcome to Reactima ESOP manager</h2>
                 </div>
             </div>
             }
