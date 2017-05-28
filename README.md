@@ -1,3 +1,11 @@
+# Reactima notes
+```bash
+npm run build
+cd build
+python -m SimpleHTTPServer 8000
+```
+
+
 # Neufund Employee Stock Options Plan UI 
 ESOP-ui is frontend application that allows you to view and manipulate [Neufund ESOP smart contract](https://github.com/Neufund/ESOP).  
   

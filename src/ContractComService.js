@@ -10,6 +10,8 @@ import ESOPDef from 'truffle-artifacts/ESOP.json'
 import EmployeesListDef from 'truffle-artifacts/EmployeesList.json'
 import OptionsCalculatorDef from 'truffle-artifacts/OptionsCalculator.json'
 
+console.log({RoTDef, ESOPDef, EmployeesListDef, OptionsCalculatorDef})
+
 export default class ContractComService {
     constructor(store) {
         this.store = store;
