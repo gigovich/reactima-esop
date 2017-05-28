@@ -5,6 +5,7 @@ import Config from './src/config.js'
 
 module.exports = {
     entry: './src/index.js',
+  devtool: "inline-source-map",
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'main.js'

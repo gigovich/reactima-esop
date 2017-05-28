@@ -8,6 +8,7 @@ import LedgerWalletSubproviderFactory from 'ledger-wallet-provider';
 let externalWeb3 = null;
 let ledger = null;
 const NODE_URL = Config.ethEndpoint;
+console.log("NODE_URL", NODE_URL)
 
 let initWeb3 = async function () {
     // Checking if Web3 has been injected by the browser (Mist/MetaMask/Parity)
@@ -40,5 +41,7 @@ let exportObject = {
         return window.web3;
     }
 };
+
+//exportObject = Web3.setProvider(new Web3.providers.HttpProvider('http://localhost:8545'));
 
 module.exports = exportObject;

@@ -40,7 +40,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --https --open --colors --progress --history-api-fallback"
+    "dev": "webpack-dev-server --open --colors --progress --history-api-fallback"
   },
   "devDependencies": {
     "babel-plugin-webpack-alias": "^2.1.2",

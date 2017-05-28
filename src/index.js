@@ -37,9 +37,14 @@ import platform from 'platform';
     try {
         await initWeb3();
         services.userManagment = new UserManagment(store);
+        console.log("services.userManagment", services.userManagment);
         services.ESOPService = new ContractComService(store);
+        console.log("services.ESOPService", services.ESOPService);
         await services.ESOPService.obtainContractAddresses();
+        console.log("await services.ESOPService.obtainContractAddresses() over");
         services.ESOPService.getESOPDataFromContract();
+        console.log("services.ESOPService.getESOPDataFromContract() over");
+        window.services = services
     } catch (exception) {
 
         store.dispatch({
