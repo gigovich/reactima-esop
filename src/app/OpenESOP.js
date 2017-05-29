@@ -354,6 +354,8 @@ export default class Init extends React.Component {
             textFieldsProps.ESOPLegalWrapperIPFSHashProps.errorText = this.state.ESOPLegalWrapperIPFSHashValidation;
         }
 
+        console.log("OpenESOP", this.state)
+
         return (
 
             <div className="new_esop">
