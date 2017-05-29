@@ -7,8 +7,8 @@ export default {
     //ethEndpoint: 'http://localhost:8545/',
     ethEndpoint: 'http://testrpc.nyusya.com:8545/',
     //ethEndpoint: 'https://ropsten.infura.io/',
-    truffleArtifacts: '../../ESOP/deployed_artifacts/ropsten', // where ABIs and addresses of smart contracts are, used by webpack
-    //truffleArtifacts: '../../ESOP/build/contracts',
+    //truffleArtifacts: '../../ESOP/deployed_artifacts/ropsten', // where ABIs and addresses of smart contracts are, used by webpack
+    truffleArtifacts: '../../ESOP/build/contracts',
 
     pdfRenderServer:'/pdfrender/',
 
