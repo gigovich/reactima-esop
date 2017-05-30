@@ -1,0 +1,19 @@
+{
+  "name": "rise",
+  "version": "1.0.0",
+  "description": "Rise ESOP contract initial data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ESOP",
+    "Ethereum"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "truffle-contract": "^2.0.0",
+    "web3": "^0.19.0"
+  }
+}
