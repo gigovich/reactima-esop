@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modulejs
+node_modules
 rise/node_modules
 
 # testing
