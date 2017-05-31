@@ -7,6 +7,7 @@ var Web3 = require('web3');
 var ESOP = require('../../ESOP/build/contracts/ESOP.json');
 
 var provider = new Web3.providers.HttpProvider('http://testrpc.nyusya.com:8545');
+var web3 = new Web3(provider);
 
 // Build truffle contracts.
 var esopCtr = contract(ESOP);
@@ -18,7 +19,6 @@ const weeks = 7 * 24 * 60 * 60;
 const extraOptionsAmount = 8172;
 
 // Contract object and options instances.
-var newEmplyeeAddress = '0x2f956f6620eeb99db927a728bf9320a5c629b69b';
 var esop;
 var companyAddress;
 var startdate;
@@ -33,16 +33,18 @@ esopCtr.deployed().then(function(instance) {
 }).then(function(value) {
   startdate = Number(value);
 }).then(function() {
-  console.log(companyAddress, newEmplyeeAddress);
-  return esop.offerOptionsToEmployee(
-    newEmplyeeAddress,
-    startdate - 1 * weeks,
-    startdate + 4 * weeks,
-    extraOptionsAmount,
-    false,
-    {from: companyAddress});
-}).then(function(v) {
-    console.log(v);
-}).catch(function(e) {
-    console.log(e);
+  for (var i = 0; i < web3.eth.accounts.length; i++) {
+    esop.offerOptionsToEmployee(
+      web3.eth.accounts[i],
+      startdate - 1 * weeks,
+      startdate + 4 * weeks,
+      extraOptionsAmount,
+      false,
+      {from: companyAddress}
+    ).then(function(result) {
+      console.log({result});
+    }).catch(function(error) {
+      console.log({error});
+    });
+  };
 });
