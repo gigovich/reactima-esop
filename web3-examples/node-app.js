@@ -5,13 +5,15 @@ var web3 = new Web3();
 var contract = require("truffle-contract");
 
 //TODO: actually we need just ABI contracts here - find way to provide those during build process
-var RoTDef = require('../../ESOP/build/contracts/RoT.json');
-var ESOPDef = require('../../ESOP/build/contracts/ESOP.json');
-var EmployeesListDef = require('../../ESOP/build/contracts/EmployeesList.json');
-var OptionsCalculatorDef = require('../../ESOP/build/contracts/OptionsCalculator.json');
+var RoTDef = require('../../reactima-esop-contracts-hack/build/contracts/RoT.json');
+var ESOPDef = require('../../reactima-esop-contracts-hack/build/contracts/ESOP.json');
+var EmployeesListDef = require('../../reactima-esop-contracts-hack/build/contracts/EmployeesList.json');
+var OptionsCalculatorDef = require('../../reactima-esop-contracts-hack/build/contracts/OptionsCalculator.json');
 
+var host = 'http://localhost:8545';
 //var provider = new Web3.providers.HttpProvider('http://localhost:8545')
-var provider = new Web3.providers.HttpProvider('http://testrpc.nyusya.com:8545');
+var provider = new Web3.providers.HttpProvider(host);
+console.log('host:'+host);
 
 web3.setProvider(provider);
 
@@ -35,7 +37,8 @@ OptionsCalculator.setProvider(provider);
 
 console.log("====================");
 var deployed;
-RoT.deployed().then((contract) => console.log(contract.address));
+RoT.deployed().then((contract) => console.log("RoT contract.address",contract.address));
+EmployeesList.deployed().then((employeesList) => employeesList.addresses().then((list)=> console.log("EmployeesList employeesList.addresses",list)));
 
 
 

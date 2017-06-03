@@ -4,9 +4,9 @@ var contract = require("truffle-contract");
 var Web3 = require('web3');
 
 // Deployed contract truffel JSON definitions files.
-var ESOP = require('../../ESOP/build/contracts/ESOP.json');
+var ESOP = require('../../reactima-esop-contracts-hack/build/contracts/ESOP.json');
 
-var provider = new Web3.providers.HttpProvider('http://testrpc.nyusya.com:8545');
+var provider = new Web3.providers.HttpProvider('http://localhost:8545');
 var web3 = new Web3(provider);
 
 // Build truffle contracts.
