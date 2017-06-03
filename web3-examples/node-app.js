@@ -19,10 +19,10 @@ web3.setProvider(provider);
 
 // General etherium network methods
 var coinbase = web3.eth.coinbase;
-console.log(coinbase);
+console.log("coinbase", coinbase);
 
 var balance = web3.eth.getBalance(coinbase);
-console.log(balance.toString(10));
+console.log("web3.eth.getBalance", balance.toString(10));
 
 // Pre-built and deployed contract menthods playground
 var RoT = contract(RoTDef);
@@ -35,10 +35,14 @@ ESOP.setProvider(provider);
 EmployeesList.setProvider(provider);
 OptionsCalculator.setProvider(provider);
 
-console.log("====================");
 var deployed;
 RoT.deployed().then((contract) => console.log("RoT contract.address",contract.address));
-EmployeesList.deployed().then((employeesList) => employeesList.addresses().then((list)=> console.log("EmployeesList employeesList.addresses",list)));
+
+ESOP.deployed()
+  .then((contract) => contract.employees())
+  .then(
+    (employees) => console.log("ESOP contract.employees",employees)
+  );
 
 
 
