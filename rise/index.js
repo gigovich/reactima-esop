@@ -6,6 +6,7 @@ var Web3 = require('web3');
 // Deployed contract truffel JSON definitions files.
 var ESOP = require('../../reactima-esop-contracts-hack/build/contracts/ESOP.json');
 
+//var provider = new Web3.providers.HttpProvider('http://testrpc.nyusya.com:8545');
 var provider = new Web3.providers.HttpProvider('http://localhost:8545');
 var web3 = new Web3(provider);
 
@@ -20,7 +21,7 @@ const extraOptionsAmount = 8172;
 
 // Contract object and options instances.
 var esop;
-var companyAddress;
+var companyAddress = "0xb96d26ade1450450de24fa2ba4ea436eb13c3287"; // Your local geth account
 var startdate;
 
 // Get instance of ESOP contract and perfom actions.
@@ -33,18 +34,16 @@ esopCtr.deployed().then(function(instance) {
 }).then(function(value) {
   startdate = Number(value);
 }).then(function() {
-  for (var i = 0; i < web3.eth.accounts.length; i++) {
     esop.offerOptionsToEmployee(
-      web3.eth.accounts[i],
+      '0x9CC29Aa45988746f4eCBbAB06208ECFeb8040fbA', // person who get offer
       startdate - 1 * weeks,
       startdate + 4 * weeks,
       extraOptionsAmount,
-      false,
+      true,
       {from: companyAddress}
     ).then(function(result) {
       console.log({result});
     }).catch(function(error) {
       console.log({error});
     });
-  };
 });
